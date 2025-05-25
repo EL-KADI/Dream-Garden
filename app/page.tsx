@@ -480,7 +480,7 @@ export default function DreamGarden() {
     >
       <header className="border-b bg-white/80 backdrop-blur-sm dark:bg-gray-800/80">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center flex-col gap-5 sm:flex-row sm:gap-0 justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">🌱</span>
@@ -491,15 +491,15 @@ export default function DreamGarden() {
               <Button variant="ghost" size="icon" onClick={() => setDarkMode(!darkMode)}>
                 {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
-              <Button onClick={saveGarden} variant="outline">
+              <Button className="dark:bg-zinc-500" onClick={saveGarden} variant="outline">
                 <Save className="h-4 w-4 mr-2" />
                 Save
               </Button>
-              <Button onClick={exportAsImage} variant="outline">
+              <Button className="dark:bg-zinc-500" onClick={exportAsImage} variant="outline">
                 <Download className="h-4 w-4 mr-2" />
                 PNG
               </Button>
-              <Button onClick={exportAsPDF} variant="outline">
+              <Button className="dark:bg-zinc-500" onClick={exportAsPDF} variant="outline">
                 <Download className="h-4 w-4 mr-2" />
                 PDF
               </Button>
@@ -612,7 +612,7 @@ export default function DreamGarden() {
                   onDrop={handleGardenDrop}
                   onDragOver={handleGardenDragOver}
                 >
-                  <div ref={gardenRef} className="w-full h-full">
+                  <div ref={gardenRef} className="w-full h-full ">
                     {garden.length === 0 ? (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
